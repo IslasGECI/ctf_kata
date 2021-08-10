@@ -19,4 +19,4 @@ jobs:
     - name: Make submissions
       run: docker run --rm --volume ${PWD}:/workdir islasgeci/ctf_kata make submissions
     - name: Evaluate a directory
-      run: docker run --rm --volume ${PWD}/pollos_petrel:/submissions islasgeci/common_task_framework geci-ctf evaluate examples/pollos_petrel/complete_dataset.csv /submissions --directory
+      run: docker run --rm --volume ${PWD}/pollos_petrel:/submissions islasgeci/common_task_framework:latest geci-ctf evaluate examples/pollos_petrel/complete_dataset.csv /submissions --directory
