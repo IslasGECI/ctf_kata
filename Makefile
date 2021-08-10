@@ -1,8 +1,12 @@
 .PHONY: \
+	clean \
 	submissions
 
+clean:
+	rm --force pollos_petrel/evaro_submission.csv
+
 submissions: \
-	pollos_petrel/evaro_submission.csv
+	pollos_petrel/evaro_submission.csv \
 	pollos_petrel/example_submission.csv
 
 pollos_petrel/evaro_submission.csv:
