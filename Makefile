@@ -11,7 +11,7 @@ submissions: \
 
 pollos_petrel/evaro_submission.csv:
 	@echo "Creating example submission file..."
-	cp pollos_petrel/example2_submission.csv pollos_petrel/evaro_submission.csv
+	mv pollos_petrel/example2_submission.csv pollos_petrel/evaro_submission.csv
 
 pollos_petrel/example_submission.csv:
 	@echo "Creating example submission file..."
