@@ -39,8 +39,8 @@ En el directorio `pollos_petrel/` puedes encontrar cuatro archivos CSV.
 - Usa los archivos `*_submission.csv` como ejemplos de solución.
 
 ## Descripción de los campos de las tablas
-- La primer columna se llama **id** y contiene un identificador único para cada registro.
-- La última columna se llama **target** y contiene la edad (en días) de los pollos. Esta columna
+- En todas las tablas, la primer columna se llama **id** y contiene un identificador único para cada registro.
+- En todas las tablas excepto `test.csv`, la última columna se llama **target** y contiene la edad (en días) de los pollos. Esta columna
   representa la _respuesta_.
-- El resto de las columnas (**Peso**, **Longitud_tarso**, ...,
+- En las tablas `test.csv` y `train.csv`, el resto de las columnas (**Peso**, **Longitud_tarso**, ...,
   **Longitud_pluma_exterior_de_la_cola**) son las varibles _predictivas_.
