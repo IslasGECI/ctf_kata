@@ -25,11 +25,11 @@ debe tener dos columnas: **id** y **target**. Ve el ejemplo: `pollos_petrel/exam
 
 Ejemplo:
 
-      id      | target
+ id           | target
 --------------|--------
-H9-2013-09-16 |  0.83
-B5-2015-09-02 |  0.94
-A9-2017-09-09 |  0.50
+H9-2013-09-16 | 0.83
+B5-2015-09-02 | 0.94
+A9-2017-09-09 | 0.50
 
 ## Descripción de las tablas
 En el directorio `pollos_petrel/` puedes encontrar cuatro archivos CSV.
