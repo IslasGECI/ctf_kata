@@ -43,4 +43,7 @@ En el directorio `pollos_petrel/` puedes encontrar cuatro archivos CSV.
 - En todas las tablas excepto `test.csv`, la última columna se llama **target** y contiene la edad (en días) de los pollos. Esta columna
   representa la _respuesta_.
 - En las tablas `test.csv` y `train.csv`, el resto de las columnas (**Peso**, **Longitud_tarso**, ...,
-  **Longitud_pluma_exterior_de_la_cola**) son las varibles _predictivas_.
+  **Longitud_pluma_exterior_de_la_cola**) son las variables _predictivas_.
+
+## Resultados
+Puedes ver el resultado del concurso en [GitHub Actions](https://github.com/IslasGECI/ctf_kata/actions).
