@@ -49,10 +49,10 @@ eval_two_quadratic <- function(training_data, testing_data) {
   center_point <- half_weight(training_data)
   are_lower_weight <- training_data$Peso < center_point
   are_lower_weight_testing <- testing_data$Peso < center_point
-  lower_weight <- training_data[are_lower_weight]
-  upper_weight <- training_data[!are_lower_weight]
-  lower_weight_testing <- testing_data[are_lower_weight_testing]
-  upper_weight_testing <- testing_data[!are_lower_weight_testing]
+  lower_weight <- training_data[are_lower_weight,]
+  upper_weight <- training_data[!are_lower_weight,]
+  lower_weight_testing <- testing_data[are_lower_weight_testing,]
+  upper_weight_testing <- testing_data[!are_lower_weight_testing,]
   lower_weight_testing <- eval_quadratic(lower_weight, lower_weight_testing)
   upper_weight_testing <- eval_quadratic(upper_weight, upper_weight_testing)
   evaluated_data <- bind_rows(lower_weight_testing, upper_weight_testing)
