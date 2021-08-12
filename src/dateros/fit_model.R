@@ -18,6 +18,11 @@ submission_data <- eval_two_variables_quadratic(training_data, testing_data) %>%
 
 write_csv(submission_data, "pollos_petrel/daterosTVQ_submission.csv")
 
+submission_data <- eval_two_variables_quadratic_wings(training_data, testing_data) %>%
+  select(c(id, target))
+
+write_csv(submission_data, "pollos_petrel/daterosTVQ2wings_submission.csv")
+
 submission_data <- eval_quadratic(training_data, testing_data) %>%
   select(c(id, target))
 
