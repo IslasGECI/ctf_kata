@@ -28,4 +28,10 @@ eval_quadratic <- function(training_data, testing_data) {
 
 eval_two_variables_quadratic <- function(training_data, testing_data)
 
-eval_two_quadratic <- function(training_data, testing_data)
+eval_two_quadratic <- function(training_data, testing_data) {
+  center_point <- medium_target_point()
+}
+
+medium_target_point <- function(data){
+  return(5)
+}
