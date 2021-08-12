@@ -17,6 +17,7 @@ clean:
 	rm --force pollos_petrel/test4.csv
 	rm --force pollos_petrel/tmp_submission.csv
 	rm --force pollos_petrel/train2.csv
+	rm --force pollos_petrel/train4.csv
 
 submissions: \
 	pollos_petrel/dateros_submission.csv \
@@ -56,11 +57,14 @@ a.txt b.txt c.txt: src/evaro/get_model_parameters4.sh fit4.log
 fit.log: src/evaro/fit_model.gp pollos_petrel/train2.csv
 	src/evaro/fit_model.gp
 
-fit4.log: src/evaro/fit_model4.gp pollos_petrel/train2.csv
+fit4.log: src/evaro/fit_model4.gp pollos_petrel/train4.csv
 	src/evaro/fit_model4.gp
 
 pollos_petrel/train2.csv: src/evaro/get_training_data_subset.sh
 	src/evaro/get_training_data_subset.sh > $@
+
+pollos_petrel/train4.csv: src/evaro/get_training_data_subset4.sh
+	src/evaro/get_training_data_subset4.sh > $@
 
 pollos_petrel/example_submission.csv:
 	@echo "Creating example submission file..."
