@@ -101,10 +101,12 @@ describe("Half weight", {
 })
 
 describe("Test eval_two_quadratic", {
-  it("Returns 1", {
-    expected <- 1
-    obtained <- return_1()
-    expect_equal(expected, obtained, tolerance = 1e-3)
+  it("Target equal to 3", {
+    training_data <- tibble(Peso = c(1, 2, 3, 4, 5), B = c("A", "B", "C", "D", "E"), target = c(1, 4, , 9, 15, 23), id = c("A", "B", "C", "D", "E"))
+    expected_data <- tibble(id = c("A", "E"), Peso = c(1, 5), B = c("A", "E"), target = c(1, 23))
+    testing_data  <- tibble(id = c("A", "E"), Peso = c(1, 2), B = c("A", "E"), target = c(5, 8))
+    obtained_data <- eval_quadratic(training_data, testing_data)
+    testthat::expect_equal(expected_data, obtained_data, tolerance = 1e-3)
   })
 })
 
