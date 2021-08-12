@@ -33,5 +33,6 @@ eval_two_quadratic <- function(training_data, testing_data) {
 }
 
 medium_target_point <- function(data){
-  return(5)
+  medium_point <- (max(data$target) + min(data$target))/2
+  return(medium_point)
 }
