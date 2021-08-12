@@ -28,9 +28,9 @@ eval_quadratic <- function(training_data, testing_data) {
 
 eval_two_variables_quadratic <- function(training_data, testing_data) {
   training_data$Peso2 <- training_data$Peso^2
-  training_data$Longitud_tarso2 <- training_data$Longitud_tarso^2
-  fitted_quadratic_model <- lm(target ~ Peso + Peso2, Longitud_tarso + Longitud_tarso2, data=training_data)
-  testing_data$target <- predict(fitted_quadratic_model, list(Peso=testing_data$Peso, Peso2=testing_data$Peso^2, Longitud_tarso=testing_data$Longitud_tarso, Longitud_tarso2=testing_data$Longitud_tarso^2))
+  training_data$Longitud_ala2 <- training_data$Longitud_ala^2
+  fitted_quadratic_model <- lm(target ~ Peso + Peso2, Longitud_ala + Longitud_ala2, data=training_data)
+  testing_data$target <- predict(fitted_quadratic_model, list(Peso=testing_data$Peso, Peso2=testing_data$Peso^2, Longitud_ala=testing_data$Longitud_ala, Longitud_ala2=testing_data$Longitud_ala^2))
   evaluated_data <- testing_data
   return(evaluated_data)
 }
