@@ -1,8 +1,8 @@
 # KATA: Predicción de la edad de pollos de petrel negro a partir de su morfometría
 
 Debes estimar la edad (en días) de un conjunto de pollos de petrel negro a partir de su morfometría.
-Someterás tu respuesta en una tabla de dos columnas: la primer columna es el identificador del pollo
-y la segunda columna es la edad estimada.
+Someterás tu respuesta como una tabla de dos columnas: la primer columna es el identificador del
+pollo y la segunda columna es la edad estimada.
 
 ## Instrucciones
 
@@ -15,7 +15,7 @@ y la segunda columna es la edad estimada.
 ## Configuración
 
 Guarda tu respuesta `<TU_NOMBRE>_submission.csv` en la carpeta `pollos_petrel/`. En el Makefile de
-este repo, agrega al _phony_ **submissions** la ruta completa a tu respuesta:
+este repo, agrega al _phony_ **submissions** la ruta completa de tu respuesta:
 `pollos_petrel/<TU_NOMBRE>_submission.csv`
 
 El _phony_ submissions debería verse así:
@@ -30,7 +30,7 @@ submissions: \
 
 (Nota las diagonales invertidas `\` al final de cada línea, excepto en la última)
 
-Agrega al Makefile como objetivo la tabla CSV `pollos_petrel/<TU_NOMBRE>_submission.csv`. Esta tabla
+Agrega al Makefile como objetivo tu respuesta `pollos_petrel/<TU_NOMBRE>_submission.csv`. Esta tabla
 debe tener dos columnas: **id** y **target**. Ve el ejemplo: `pollos_petrel/example_submission.csv`.
 
 Ejemplo:
@@ -43,20 +43,20 @@ A9-2017-09-09 | 0.50
 
 ## Reglas
 
-- No puedes consultar la base de datos original (la cual se encuentra en otro repositorio). No se
-  vale hacer sobreajuste con los datos _behind the wall_.
 - El comando `make pollos_petrel/<TU_NOMBRE>_submission.csv` debe reproducir tu respuesta
-  (`pollos_petrel/<TU_NOMBRE>_submission.csv`) a paritr de los datos `test.csv`. No se vale
-  consignar la respuesta.
+  (`pollos_petrel/<TU_NOMBRE>_submission.csv`) a paritr de los datos `test.csv`. Todo el código debe
+  correr dentro del contenedor. No se vale consignar la respuesta.
 - Todas las y los participantes consignaran su código en este repositorio. Debes consignar y pushar
   varias veces por hora. El resto de los equipos podrán inspirarse en tu código y tú te podrás
   inspirar en el código del resto de los equipos. No se vale copiar.
+- No puedes consultar la base de datos original (la cual se encuentra en otro repositorio _behind
+  the wall_). No se vale hacer sobreajuste con los datos _behind the wall_.
 
 ## Descripción de las tablas
 En el directorio `pollos_petrel/` puedes encontrar cuatro archivos CSV.
 
-- Usa el archivo `train.csv` para entrenar tu algoritmo.
-- Usa el archivo `test.csv` para evaluar tu algoritmo.
+- Usa el archivo `train.csv` para ajustar tu modelo (entrenar tu algoritmo).
+- Usa el archivo `test.csv` para evaluar tu modelo ajustado.
 - Usa los archivos `*_submission.csv` como ejemplos de respuestas.
 
 ## Descripción de los campos de las tablas
