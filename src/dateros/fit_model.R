@@ -17,3 +17,8 @@ submission_data <- eval_two_varibles_quadratic(training_data, testing_data) %>%
   select(c(id, target))
 
 write_csv(submission_data, "pollos_petrel/daterosTVQ_submission.csv")
+
+submission_data <- eval_two_quadratic(training_data, testing_data) %>%
+  select(c(id, target))
+
+write_csv(submission_data, "pollos_petrel/daterosTQ_submission.csv")
