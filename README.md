@@ -50,7 +50,7 @@ A9-2017-09-09 | 0.50
   varias veces por hora. El resto de los equipos podrán inspirarse en tu código y tú te podrás
   inspirar en el código del resto de los equipos. No se vale copiar.
 - No puedes consultar la base de datos original (la cual se encuentra en otro repositorio _behind
-  the wall_). No se vale sobreajustearcon los datos _behind the wall_.
+  the wall_). No se vale sobreajustear con los datos _behind the wall_.
 
 ## Descripción de las tablas
 En el directorio `pollos_petrel/` puedes encontrar cuatro archivos CSV.
