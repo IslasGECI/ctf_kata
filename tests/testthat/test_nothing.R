@@ -99,3 +99,35 @@ describe("Medium target", {
     expect_equal(expected, obtained, tolerance = 1e-3)
   })
 })
+
+describe("Test eval_two_quadratic", {
+  it("Returns 1", {
+    expected <- 1
+    obtained <- return_1()
+    expect_equal(expected, obtained, tolerance = 1e-3)
+  })
+})
+
+describe("Test eval_quadratic", {
+  it("Target equal to 3", {
+    training_data <- tibble(Peso = c(1, 2, 3, 4, 5), B = c("A", "B", "C", "D", "E"), target = c(3, 3, 3, 3, 3), id = c("A", "B", "C", "D", "E"))
+    expected_data <- tibble(id = c("A", "B"), Peso = c(1, 2), B = c("A", "B"), target = c(3, 3))
+    testing_data <- tibble(id = c("A", "B"), Peso = c(1, 2), B = c("A", "B"), target = c(5, 8))
+    obtained_data <- eval_quadratic(training_data, testing_data)
+    testthat::expect_equal(expected_data, obtained_data, tolerance = 1e-3)
+  })
+  it("A second example y=x^2", {
+    training_data <- tibble(Peso = c(1, 2, 3, 4, 5), B = c("A", "B", "C", "D", "E"), target = c(1, 4, 9, 16, 25), id = c("A", "B", "C", "D", "E"))
+    expected_data <- tibble(id = c("A", "B"), Peso = c(2, 3), B = c("A", "B"), target = c(4, 9))
+    testing_data <- tibble(id = c("A", "B"), Peso = c(2, 3), B = c("A", "B"), target = c(5, 8))
+    obtained_data <- eval_quadratic(training_data, testing_data)
+    testthat::expect_equal(expected_data, obtained_data, tolerance = 1e-3)
+  })
+  it("A second example y=x^2-x+3", {
+    training_data <- tibble(Peso = c(1, 2, 3, 4, 5), B = c("A", "B", "C", "D", "E"), target = c(3, 5, 9, 15, 23), id = c("A", "B", "C", "D", "E"))
+    expected_data <- tibble(id = c("A", "B"), Peso = c(6, 7), B = c("A", "B"), target = c(33, 45))
+    testing_data <- tibble(id = c("A", "B"), Peso = c(6, 7), B = c("A", "B"), target = c(5, 8))
+    obtained_data <- eval_quadratic(training_data, testing_data)
+    testthat::expect_equal(expected_data, obtained_data, tolerance = 1e-3)
+  })
+})
