@@ -1,7 +1,7 @@
 # KATA: Predicción de la edad de pollos de petrel negro a partir de su morfometría
 
 Debes estimar la edad (en días) de un conjunto de pollos de petrel negro a partir de su morfometría.
-Someterás tu respuesta como una tabla de dos columnas: la primer columna es el identificador del
+Someterás tu respuesta como una tabla de dos columnas: la primera columna es el identificador del
 pollo y la segunda columna es la edad estimada.
 
 ## Instrucciones
