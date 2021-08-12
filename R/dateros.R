@@ -3,6 +3,6 @@ return_1 <- function(){
 }
 
 divide_data <- function(input_data){
-    output_data <- tibble(A=c(1,2,3,4),B=c('A','B','C','D'))
+    output_data <- sample_frac(input_data,size=0.8)
     return(output_data)
 }
