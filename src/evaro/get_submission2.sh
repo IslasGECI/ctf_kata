@@ -2,5 +2,6 @@
 
 slope=$(cat m.txt)
 intercept=$(cat b.txt)
-sed 's/NA/0/g' pollos_petrel/test.csv > pollos_petrel/test2.csv
+mean_tarsus=$(csvstat pollos_petrel/train.csv | grep Mean | head -2 | tail -1 | grep --extended-regexp --only-matching --regexp=[0-9]+\.[0-9]+)
+sed "s/NA/${mean_tarsus}/g" pollos_petrel/test.csv > pollos_petrel/test2.csv
 csvsql --query "select id,Longitud_tarso as 'target' from 'test2'" pollos_petrel/test2.csv
