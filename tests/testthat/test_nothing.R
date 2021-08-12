@@ -25,4 +25,11 @@ describe("Divide data in a proportion of 80/20", {
     obtained_n_row <- nrow(obtained_data)
     expect_equal(expected_n_row,obtained_n_row,tolerance = 1e-3)
   })
+  datos_prueba <- tibble(A=c(1,2,3,4,5,1,2,3,4,5,3,4,5,1,2),B=c('A','B','C','D','E','A','B','C','D','E','A','B','C','D','E'))
+  it("That the number of rows is 8", {
+    expected_n_row <- 12
+    obtained_data <- divide_data(datos_prueba)
+    obtained_n_row <- nrow(obtained_data)
+    expect_equal(expected_n_row,obtained_n_row,tolerance = 1e-3)
+  })
 })
