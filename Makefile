@@ -24,6 +24,13 @@ pollos_petrel/evaro_submission.csv: src/evaro/get_submission.sh
 	@echo "Creating Évaro's submission file..."
 	src/evaro/get_submission.sh > $@
 
+pollos_petrel/evaro2_submission.csv: src/evaro/get_submission.gp pollos_petrel/train2.csv
+	@echo "Creating Évaro's submission file..."
+	src/evaro/get_submission.gp > $@
+
+pollos_petrel/train2.csv: src/evaro/get_training_data_subset.sh
+	src/evaro/get_training_data_subset.sh > $@
+
 pollos_petrel/example_submission.csv:
 	@echo "Creating example submission file..."
 	touch pollos_petrel/example_submission.csv
