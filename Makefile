@@ -11,11 +11,14 @@ clean:
 	rm --force *.txt
 	rm --force fit.log
 	rm --force pollos_petrel/evaro_submission.csv
+	rm --force pollos_petrel/evaro2_submission.csv
+	rm --force pollos_petrel/test2.csv
 	rm --force pollos_petrel/train2.csv
 
 submissions: \
 	pollos_petrel/dateros_submission.csv \
 	pollos_petrel/evaro_submission.csv \
+	pollos_petrel/evaro2_submission.csv \
 	pollos_petrel/example_submission.csv \
 	pollos_petrel/los_papuchos_de_nezayork_submission.csv
 
@@ -26,6 +29,10 @@ pollos_petrel/dateros_submission.csv:
 pollos_petrel/evaro_submission.csv: src/evaro/get_submission.sh
 	@echo "Creating Évaro's submission file..."
 	src/evaro/get_submission.sh > $@
+
+pollos_petrel/evaro2_submission.csv: src/evaro/get_submission2.sh m.txt b.txt
+	@echo "Creating Évaro's submission file..."
+	src/evaro/get_submission2.sh > $@
 
 m.txt b.txt: src/evaro/get_model_parameters.sh fit.log
 	src/evaro/get_model_parameters.sh
