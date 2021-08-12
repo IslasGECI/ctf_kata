@@ -20,4 +20,7 @@ pollos_petrel/example_submission.csv:
 
 pollos_petrel/los_papuchos_de_nezayork_submission.csv:
 	@echo "Creating 'los papuchos de nezayork' submission file..."
-	python src/the_ultimate_regressor_3000.py
+	python src/the_ultimate_regressor_3000.py \
+		--input pollos_petrel/train.csv \
+		--input pollos_petrel/test.csv \
+		--output pollos_petrel/los_papuchos_de_nezayork_submission.csv
