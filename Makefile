@@ -14,6 +14,7 @@ clean:
 	rm --force pollos_petrel/evaro4_submission.csv
 	rm --force pollos_petrel/test2.csv
 	rm --force pollos_petrel/test3.csv
+	rm --force pollos_petrel/test4.csv
 	rm --force pollos_petrel/tmp_submission.csv
 	rm --force pollos_petrel/train2.csv
 
