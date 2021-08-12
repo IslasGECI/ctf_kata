@@ -7,6 +7,7 @@
 clean:
 	rm --force *.txt
 	rm --force fit.log
+	rm --force pollos_petrel/dateros_submission.csv
 	rm --force pollos_petrel/evaro_submission.csv
 	rm --force pollos_petrel/evaro2_submission.csv
 	rm --force pollos_petrel/evaro3_submission.csv
