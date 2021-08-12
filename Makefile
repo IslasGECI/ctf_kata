@@ -15,7 +15,7 @@ pollos_petrel/dateros_submission.csv:
 	@echo "Creating iztapalacra's submission file..."
 	cp pollos_petrel/example2_submission.csv pollos_petrel/dateros_submission.csv
 
-pollos_petrel/evaro_submission.csv:
+pollos_petrel/evaro_submission.csv: src/evaro/get_submission.sh
 	@echo "Creating Évaro's submission file..."
 	src/evaro/get_submission.sh > $@
 
