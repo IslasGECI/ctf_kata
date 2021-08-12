@@ -70,5 +70,5 @@ En el directorio `pollos_petrel/` puedes encontrar cuatro archivos CSV.
 ## Resultados
 El equipo ganador será el que obtenga el menor error absoluto medio
 ([MAE](https://en.wikipedia.org/wiki/Mean_absolute_error)). Puedes ver los resultados del concurso
-en [GitHub Actions](https://github.com/IslasGECI/ctf_kata/actions) en la sección _Evaluate a
+en [GitHub Actions](https://github.com/IslasGECI/ctf_kata/actions) en la sección: _Evaluate a
 directory_.
