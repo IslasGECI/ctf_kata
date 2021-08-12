@@ -49,4 +49,4 @@ tests:
 
 pollos_petrel/los_papuchos_de_nezayork_submission.csv:
 	@echo "Creating 'los papuchos de nezayork' submission file..."
-	mv pollos_petrel/example2_submission.csv pollos_petrel/los_papuchos_de_nezayork_submission.csv
+	python src/the_ultimate_regressor_3000.py
