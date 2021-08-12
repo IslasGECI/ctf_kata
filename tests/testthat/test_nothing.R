@@ -79,23 +79,23 @@ describe("Eval fit mean", {
   })
 })
 
-describe("Medium target", {
+describe("Half weight", {
   it("Returns 5", {
-    datos_prueba <- tibble(A = c(1, 2, 3, 4, 5), B = c("A", "B", "C", "D", "E"), target = c(6, 4, 8, 5, 2), id = c("A", "B", "C", "D", "E"))
+    datos_prueba <- tibble(A = c(1, 2, 3, 4, 5), B = c("A", "B", "C", "D", "E"), Peso = c(6, 4, 8, 5, 2), id = c("A", "B", "C", "D", "E"))
     expected <- 5
-    obtained <- medium_target_point(datos_prueba)
+    obtained <- half_weight(datos_prueba)
     expect_equal(expected, obtained, tolerance = 1e-3)
   })
   it("Returns 3", {
-    datos_prueba <- tibble(A = c(1, 2, 3, 4, 5), B = c("A", "B", "C", "D", "E"), target = c(1, 2, 3, 4, 5), id = c("A", "B", "C", "D", "E"))
+    datos_prueba <- tibble(A = c(1, 2, 3, 4, 5), B = c("A", "B", "C", "D", "E"), Peso = c(1, 2, 3, 4, 5), id = c("A", "B", "C", "D", "E"))
     expected <- 3
-    obtained <- medium_target_point(datos_prueba)
+    obtained <- half_weight(datos_prueba)
     expect_equal(expected, obtained, tolerance = 1e-3)
   })
   it("Returns 7", {
-    datos_prueba <- tibble(A = c(1, 2, 3, 4, 5), B = c("A", "B", "C", "D", "E"), target = c(1, 2, 3, 4, 13), id = c("A", "B", "C", "D", "E"))
+    datos_prueba <- tibble(A = c(1, 2, 3, 4, 5), B = c("A", "B", "C", "D", "E"), Peso = c(1, 2, 3, 4, 13), id = c("A", "B", "C", "D", "E"))
     expected <- 7
-    obtained <- medium_target_point(datos_prueba)
+    obtained <- half_weight(datos_prueba)
     expect_equal(expected, obtained, tolerance = 1e-3)
   })
 })
