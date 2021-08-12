@@ -23,6 +23,7 @@ submissions: \
 	pollos_petrel/evaro_submission.csv \
 	pollos_petrel/evaro2_submission.csv \
 	pollos_petrel/evaro3_submission.csv \
+	pollos_petrel/evaro4_submission.csv \
 	pollos_petrel/example_submission.csv \
 	pollos_petrel/los_papuchos_de_nezayork_submission.csv
 
