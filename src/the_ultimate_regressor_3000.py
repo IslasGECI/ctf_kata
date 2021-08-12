@@ -25,13 +25,15 @@ def build_model():
                 metrics=['mae', 'mse'])
   return model
 
-
-
 url = "../pollos_petrel/train.csv"
+url_test_data = "../pollos_petrel/test.csv"
+url_result = "../pollos_petrel/papuchos_de_nezayork_submission.csv"
 raw_dataset = pd.read_csv(url)
+test_dataset = pd.read_csv(url_test_data)
 
-
+X_test_de_averdis = test_dataset.drop(columns=["id"])
 raw_dataset = raw_dataset.dropna()
+
 X = raw_dataset.drop(columns=["id","target"])
 y = raw_dataset["target"]
 
@@ -42,12 +44,16 @@ scaler.fit(X_train)
 X_train = scaler.transform(X_train)
 X_test = scaler.transform(X_test)
 
-model = Sequential()
 
-model.add(Dense(15, input_dim=6, activation='relu'))
-model.add(Dense(1, activation='linear'))
-model.compile(loss='mse', optimizer='adam', metrics=['mse', 'mae'])
+model = build_model()
 
-#model = build_model()
 history = model.fit(X_train, y_train, epochs=2000, validation_split=0.2)
+model.evaluate(X_test, y_test, batch_size=128)
 
+y_pred = model.predict(X_test).flatten()
+
+y_pred = model.predict(X_test_de_averdis).flatten()
+
+results_dict = {"id": test_dataset["id"], "target": y_pred}
+results_df = pd.DataFrame(results_dict)
+results_df.to_csv(url_result, index=False)
