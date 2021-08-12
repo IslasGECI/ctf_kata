@@ -6,11 +6,12 @@
 
 clean:
 	rm --force *.txt
-	rm --force fit.log
+	rm --force fit*.log
 	rm --force pollos_petrel/dateros_submission.csv
 	rm --force pollos_petrel/evaro_submission.csv
 	rm --force pollos_petrel/evaro2_submission.csv
 	rm --force pollos_petrel/evaro3_submission.csv
+	rm --force pollos_petrel/evaro4_submission.csv
 	rm --force pollos_petrel/test2.csv
 	rm --force pollos_petrel/test3.csv
 	rm --force pollos_petrel/tmp_submission.csv
@@ -32,19 +33,29 @@ pollos_petrel/evaro_submission.csv: src/evaro/get_submission.sh
 	@echo "Creating Évaro's submission file..."
 	src/evaro/get_submission.sh > $@
 
-pollos_petrel/evaro2_submission.csv: src/evaro/get_submission2.sh m.txt b.txt
+pollos_petrel/evaro2_submission.csv: src/evaro/get_submission2.sh slope.txt intercept.txt
 	@echo "Creating Évaro's submission file..."
 	src/evaro/get_submission2.sh > $@
 
-pollos_petrel/evaro3_submission.csv: src/evaro/get_submission3.sh m.txt b.txt
+pollos_petrel/evaro3_submission.csv: src/evaro/get_submission3.sh slope.txt intercept.txt
 	@echo "Creating Évaro's submission file..."
 	src/evaro/get_submission3.sh > $@
 
-m.txt b.txt: src/evaro/get_model_parameters.sh fit.log
+pollos_petrel/evaro4_submission.csv: src/evaro/get_submission4.sh a.txt b.txt c.txt
+	@echo "Creating Évaro's submission file..."
+	src/evaro/get_submission4.sh > $@
+
+slope.txt intercept.txt: src/evaro/get_model_parameters.sh fit.log
 	src/evaro/get_model_parameters.sh
+
+a.txt b.txt c.txt: src/evaro/get_model_parameters4.sh fit4.log
+	src/evaro/get_model_parameters4.sh
 
 fit.log: src/evaro/fit_model.gp pollos_petrel/train2.csv
 	src/evaro/fit_model.gp
+
+fit4.log: src/evaro/fit_model4.gp pollos_petrel/train2.csv
+	src/evaro/fit_model4.gp
 
 pollos_petrel/train2.csv: src/evaro/get_training_data_subset.sh
 	src/evaro/get_training_data_subset.sh > $@
