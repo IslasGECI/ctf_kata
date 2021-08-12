@@ -102,9 +102,9 @@ describe("Half weight", {
 
 describe("Test eval_two_quadratic", {
   it("Target equal to 3", {
-    training_data <- tibble(Peso = c(1, 2, 3, 4, 5), B = c("A", "B", "C", "D", "E"), target = c(1, 4, 9, 15, 23), id = c("A", "B", "C", "D", "E"))
-    expected_data <- tibble(id = c("A", "B", "C", "D", "E"), Peso = c(1, 2, 3, 4, 5), B = c("A", "B", "C", "D", "E"), target = c(1, 4, 9, 15, 23))
-    testing_data  <- tibble(id = c("A", "B", "C", "D", "E"), Peso = c(1, 2, 3, 4, 5), B = c("A", "B", "C", "D", "E"), target = c(3, 3, 3, 35, 33))
+    training_data <- tibble(Peso = c(0, 1, 2, 3, 4, 5), B = c("A", "B", "C", "D", "E", "F"), target = c(0, 1, 4, 9, 15, 23), id = c("A", "B", "C", "D", "E", "F"))
+    expected_data <- tibble(id = c("A", "B", "C", "D", "E", "F"), Peso = c(0,1, 2, 3, 4, 5), B = c("A", "B", "C", "D", "E", "F"), target = c(0,1, 4, 9, 15, 23))
+    testing_data  <- tibble(id = c("A", "B", "C", "D", "E", "F"), Peso = c(0,1, 2, 3, 4, 5), B = c("A", "B", "C", "D", "E", "F"), target = c(0,3, 3, 3, 35, 33))
     obtained_data <- eval_two_quadratic(training_data, testing_data)
     testthat::expect_equal(expected_data, obtained_data, tolerance = 1e-3)
   })
