@@ -78,3 +78,12 @@ describe("Eval fit mean", {
     expect_equal(expected_data, obtained_data, tolerance = 1e-3)
   })
 })
+
+describe("Medium target", {
+  it("Returns 5", {
+    datos_prueba <- tibble(A = c(1, 2, 3, 4, 5), B = c("A", "B", "C", "D", "E"), target = c(6, 4, 8, 5, 2), id = c("A", "B", "C", "D", "E"))
+    expected <- 5
+    obtained <- medium_target_point(datos_prueba)
+    expect_equal(expected, obtained, tolerance = 1e-3)
+  })
+})
