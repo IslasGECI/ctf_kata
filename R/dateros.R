@@ -17,3 +17,11 @@ eval_fit_mean <- function(training_data, testing_data) {
   evaluated_data <- testing_data
   return(evaluated_data)
 }
+
+eval_quadratic <- function(training_data, testing_data) {
+  training_data$Peso2 <- training_data$Peso^2
+  fitted_quadratic_model <- lm(target ~ Peso + Peso2, data=training_data)
+  testing_data$target <- predict(fitted_quadratic_model, list(Peso=testing_data$Peso, Peso2=testing_data$Peso^2))
+  evaluated_data <- testing_data
+  return(evaluated_data)
+}
