@@ -1,7 +1,11 @@
 .PHONY: \
 	clean \
 	submissions \
-	tests
+	tests \
+	fit_dateros
+
+fit_dateros:
+	Rscript src/dateros/fit_model.R
 
 clean:
 	rm --force pollos_petrel/evaro_submission.csv
