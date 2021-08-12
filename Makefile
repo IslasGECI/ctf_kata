@@ -23,4 +23,5 @@ pollos_petrel/los_papuchos_de_nezayork_submission.csv:
 	python src/the_ultimate_regressor_3000.py \
 		--input pollos_petrel/train.csv \
 		--input pollos_petrel/test.csv \
-		--output pollos_petrel/los_papuchos_de_nezayork_submission.csv
+		--output pollos_petrel/los_papuchos_de_nezayork_submission.csv \
+		--output pollos_petrel/resultados_ajuste.png
