@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-slope=$(cat m.txt)
-intercept=$(cat b.txt)
+slope=$(cat slope.txt)
+intercept=$(cat intercept.txt)
 sed "s/NA/0/g" pollos_petrel/test.csv > pollos_petrel/test3.csv
 csvsql --query "select id,((${slope}*Longitud_tarso)+${intercept}) as 'target' from 'test3'" pollos_petrel/test3.csv > pollos_petrel/tmp_submission.csv
 mean_target=$(csvstat pollos_petrel/train.csv | grep Mean | tail -1 | grep --extended-regexp --only-matching --regexp=[0-9]+\.[0-9]+)
