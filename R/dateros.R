@@ -13,6 +13,7 @@ fit_mean <- function(input_data) {
 }
 
 eval_fit_mean <- function(training_data, testing_data) {
-  evaluated_data <- testing_data$target
+  testing_data$target <- fit_mean(training_data)
+  evaluated_data <- testing_data
   return(evaluated_data)
 }
