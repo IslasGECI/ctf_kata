@@ -45,7 +45,7 @@ A9-2017-09-09 | 0.50
 
 - El comando `make pollos_petrel/<TU_NOMBRE>_submission.csv` debe reproducir tu respuesta
   (`pollos_petrel/<TU_NOMBRE>_submission.csv`) a paritr de los datos `test.csv`. Todo el código debe
-  correr dentro del contenedor. No se vale consignar la respuesta.
+  correr dentro del contenedor. No se vale consignar la respuesta ni tampoco números mágicos.
 - Todas las y los participantes consignaran su código en este repositorio. Debes consignar y pushar
   varias veces por hora. El resto de los equipos podrán inspirarse en tu código y tú te podrás
   inspirar en el código del resto de los equipos. No se vale copiar.
