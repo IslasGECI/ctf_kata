@@ -25,3 +25,5 @@ eval_quadratic <- function(training_data, testing_data) {
   evaluated_data <- testing_data
   return(evaluated_data)
 }
+
+eval_two_variables_quadratic <- function(training_data, testing_data)
