@@ -8,6 +8,7 @@ fit_dateros:
 	Rscript src/dateros/fit_model.R
 
 clean:
+	rm --force *.txt
 	rm --force fit.log
 	rm --force pollos_petrel/evaro_submission.csv
 	rm --force pollos_petrel/train2.csv
@@ -25,6 +26,9 @@ pollos_petrel/dateros_submission.csv:
 pollos_petrel/evaro_submission.csv: src/evaro/get_submission.sh
 	@echo "Creating Évaro's submission file..."
 	src/evaro/get_submission.sh > $@
+
+m.txt b.txt: src/evaro/get_model_parameters.sh fit.log
+	src/evaro/get_model_parameters.sh
 
 fit.log: src/evaro/fit_model.gp pollos_petrel/train2.csv
 	src/evaro/fit_model.gp
