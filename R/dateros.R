@@ -17,3 +17,9 @@ eval_fit_mean <- function(training_data, testing_data) {
   evaluated_data <- testing_data
   return(evaluated_data)
 }
+
+eval_quadratic <- function(training_data, testing_data) {
+    fitted_quadratic_model <- lm(training_data)
+    # evaluated_data <- predict(fit_quadratic_model, testing_data)
+    return(NULL)
+}
