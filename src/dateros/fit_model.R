@@ -1,8 +1,8 @@
 library(tidyverse)
 source("R/dateros.R")
 
-original_data <- read_csv("pollos_petrel/train.csv")
-testing_data <- read_csv("pollos_petrel/test.csv")
+original_data <- na.omit(read_csv("pollos_petrel/train.csv"))
+testing_data <- na.omit(read_csv("pollos_petrel/test.csv"))
 
 training_data <- divide_data(original_data)
 
